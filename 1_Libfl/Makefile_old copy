@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile copy                                      :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: areverte <areverte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 16:11:19 by areverte          #+#    #+#              #
-#    Updated: 2022/09/22 17:58:24 by areverte         ###   ########.fr        #
+#    Updated: 2022/09/21 20:33:57 by areverte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,17 +35,15 @@ SRCS = ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_strdup.c \
-	ft_calloc.c \
-	ft_substr.c \
-	ft_strjoin.c \
 
-CFLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 OBJS = $(SRCS:.c=.o)
 HEADERS = /*.h
 
 $(NAME):
-	$(CC) -c $(CFLAGS) $(SRCS) -I $(HEADERS)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) -c $(FLAGS) $(SRCS) -I $(HEADERS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 all: $(NAME)
 

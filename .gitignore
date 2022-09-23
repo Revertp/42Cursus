@@ -53,6 +53,6 @@ dkms.conf
 
 #own
 .DS_Store
-Docu_*
-Makefile_*
+#Docu_*
+#Makefile_*
 *.json

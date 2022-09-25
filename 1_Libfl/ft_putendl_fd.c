@@ -1,43 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 16:29:21 by areverte          #+#    #+#             */
-/*   Updated: 2022/09/23 17:28:36 by areverte         ###   ########.fr       */
+/*   Created: 2022/09/25 16:14:39 by areverte          #+#    #+#             */
+/*   Updated: 2022/09/25 20:03:30 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*str;
-	int		i;
+	int	i;
 
-	str = (char *) malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (NULL);
 	i = 0;
-	while (*s1)
-	{
-		str[i] = *s1++;
-		i++;
-	}
-	while (*s2)
-	{
-		str[i] = *s2++;
-		i++;
-	}
-	str[i] = 0;
-	return (str);
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
+	write(fd, "\n", 1);
 }
-
-/*
-int	main(void)
-{
-	ft_strjoin("Hola", "que tal");
-}
-*/

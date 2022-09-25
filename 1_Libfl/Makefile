@@ -6,7 +6,7 @@
 #    By: areverte <areverte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 16:11:19 by areverte          #+#    #+#              #
-#    Updated: 2022/09/22 17:58:24 by areverte         ###   ########.fr        #
+#    Updated: 2022/09/25 20:15:46 by areverte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,15 @@ SRCS = ft_atoi.c \
 	ft_calloc.c \
 	ft_substr.c \
 	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_split.c \
+	ft_itoa.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+	ft_strmapi.c \
+	ft_striteri.c \
 
 CFLAGS = -Wall -Werror -Wextra
 OBJS = $(SRCS:.c=.o)

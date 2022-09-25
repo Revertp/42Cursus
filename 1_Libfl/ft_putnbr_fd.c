@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 16:29:21 by areverte          #+#    #+#             */
-/*   Updated: 2022/09/23 17:28:36 by areverte         ###   ########.fr       */
+/*   Created: 2022/09/25 16:19:26 by areverte          #+#    #+#             */
+/*   Updated: 2022/09/25 20:04:04 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	int		i;
+	long int	nb;
 
-	str = (char *) malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (*s1)
+	nb = n;
+	if (nb < 0)
 	{
-		str[i] = *s1++;
-		i++;
+		ft_putchar_fd(45, fd);
+		nb = -nb;
 	}
-	while (*s2)
+	if (nb > 9)
 	{
-		str[i] = *s2++;
-		i++;
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd((nb % 10) + 48, fd);
 	}
-	str[i] = 0;
-	return (str);
+	else
+		ft_putchar_fd((nb % 10) + 48, fd);
 }
-
-/*
-int	main(void)
-{
-	ft_strjoin("Hola", "que tal");
-}
-*/

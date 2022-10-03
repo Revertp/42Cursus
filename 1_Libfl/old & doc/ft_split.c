@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 static size_t	lookingc(char const *s, char c)
 {
 	size_t	i;

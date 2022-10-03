@@ -62,9 +62,9 @@ static char	**malloc_strings(char const *s, char c, char **words, size_t i)
 			while (s[i] != c && i < ft_strlen(s))
 				i++;
 			words[j] = ft_substr(s, start, (start - i));
-			if (!str[j])
+			if (!words[j])
 			{
-				memfree(str, j);
+				memfree(words, j);
 				return (NULL);
 			}
 			j++;
@@ -84,4 +84,20 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	return (malloc_strings(s, c, words, i));
+}
+
+int	main(void)
+{
+	char const s[] = "1hola1que1tal";
+	char c = '1';
+	char **t;
+	int i;
+
+	t = ft_split(s,c);
+	i = 0;
+	while(t[i])
+	{
+		puts(t[i]);
+		i++;
+	}
 }

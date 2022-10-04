@@ -6,7 +6,7 @@
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 17:31:12 by areverte          #+#    #+#             */
-/*   Updated: 2022/09/25 20:04:29 by areverte         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:19:58 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	return (malloc_strings(s, c, words, i));
 }
-
+/*
 int	main(void)
 {
 	char const s[] = "1hola1que1tal";
@@ -101,3 +101,4 @@ int	main(void)
 		i++;
 	}
 }
+*/

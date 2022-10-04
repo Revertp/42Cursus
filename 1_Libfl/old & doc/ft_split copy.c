@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split copy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 17:31:12 by areverte          #+#    #+#             */
-/*   Updated: 2022/09/25 19:33:46 by areverte         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:22:40 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 static	int	word_counter(char const *s, char c)
 {
 	size_t	i;
@@ -90,7 +90,7 @@ char	**ft_split(char const *s, char c)
 	return (words);
 }
 
-/*
+
 static int	ft_is_charset(char str, char *charset)
 {
 	while (*charset)

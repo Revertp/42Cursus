@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 19:46:52 by areverte          #+#    #+#             */
-/*   Updated: 2022/10/04 17:32:15 by areverte         ###   ########.fr       */
+/*   Created: 2022/10/04 17:48:07 by areverte          #+#    #+#             */
+/*   Updated: 2022/10/04 18:04:34 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list *ft_lstlast(t_list *lst)
 {
-	unsigned int	i;
+	t_list	*temp;
 
-	i = 0;
-	while (s[i])
-	{
-		(*f)(i, &s[i]);
-		i++;
-	}
+	temp = lst;
+	if (!temp)
+		return(0);
+	while(temp->next)
+		temp = temp->next;
+	return (temp);
 }
-/*
-int main(void)
-{
-	ft_strmapi(cuatro, )
-}
-*/

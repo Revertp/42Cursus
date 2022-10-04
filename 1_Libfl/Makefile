@@ -6,7 +6,7 @@
 #    By: areverte <areverte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 16:11:19 by areverte          #+#    #+#              #
-#    Updated: 2022/09/25 20:15:46 by areverte         ###   ########.fr        #
+#    Updated: 2022/10/04 19:15:33 by areverte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,18 +48,37 @@ SRCS = ft_atoi.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 
+
+
+SRCSB =	ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstadd_back_bonus.c \
+	ft_lstdelone_bonus.c \
+	ft_lstclear_bonus.c \
+	ft_lstiter_bonus.c \
+
 CFLAGS = -Wall -Werror -Wextra
 OBJS = $(SRCS:.c=.o)
+OBJSBONUS = $(SRCSB:.c=.o)
 HEADERS = /*.h
 
 $(NAME):
 	$(CC) -c $(CFLAGS) $(SRCS) -I $(HEADERS)
 	ar rcs $(NAME) $(OBJS)
 
+$(NAMEB):
+
+
 all: $(NAME)
 
+bonus:
+	$(CC) -c $(CFLAGS) $(SRCS) $(SRCSB) -I $(HEADERS)
+	ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	rm -f $(NAME)

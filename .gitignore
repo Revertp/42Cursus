@@ -56,3 +56,5 @@ dkms.conf
 #Docu_*
 #Makefile_*
 *.json
+old&doc/
+test/

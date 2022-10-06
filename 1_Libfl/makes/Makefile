@@ -5,11 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: areverte <areverte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/20 18:10:23 by areverte          #+#    #+#              #
-#    Updated: 2022/10/06 22:04:59 by areverte         ###   ########.fr        #
+#    Created: 2022/09/21 16:11:19 by areverte          #+#    #+#              #
+#    Updated: 2022/10/05 22:08:45 by areverte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME = libft.a
 
@@ -61,30 +60,33 @@ SRCSB =	ft_lstnew_bonus.c \
 	ft_lstiter_bonus.c \
 
 CFLAGS = -Wall -Werror -Wextra
-OBJS =  ${SRCS:.c=.o}
-OBJSBONUS = ${SRCSB:.c=.o}
-HEADER = libft.h
+OBJS = $(SRCS:.c=.o)
+OBJSBONUS = $(SRCSB:.c=.o)
+HEADERS = /*.h
+DEPS = $(SRCS:.c=.d)
+DEPSB = $(SRCSB:.c=.d)ls -
 
+$(NAME):
+	$(CC) $(CFLAGS) -c $(SRCS) -I $(HEADERS)
+	ar rc $(NAME) $(OBJS) $(DEPS)
 
-RM = rm -Rf ..swp -o .ft_ -o
+-include $(DEPS) $(DEPSB)
 
-#%.o : %.c
-#	${CC} ${CFLAGS} -c $< -o $@
+all: $(NAME)
 
-${NAME} :	${OBJS} ${HEADER}
-			ar rcs ${NAME} ${OBJS}
+bonus:
+	$(CC) $(CFLAGS) -c $(SRCS) $(SRCSB) -I $(HEADERS)
+	ar rcs $(NAME) $(OBJSBONUS) $(DEPSB)
+#touch $@
 
-all:		${NAME}
-
-bonus:		${OBJS} ${OBJSBONUS} ${HEADER}
-			ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
-			@touch $@
 clean:
-			${RM} ${OBJS} ${OBJSBONUS}
+	rm -f $(OBJS) $(OBJSBONUS) $(DEPS)
 
-fclean:	clean
-			${RM} ${NAME} bonus
+fclean: clean
+	rm -f $(NAME)
 
-re:		fclean all
+re: fclean all
 
-.PHONY = all clean fclean re bonus
+.PHONY = fclean clean all re bonus
+
+#mirar MMD y MD

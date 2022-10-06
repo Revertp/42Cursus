@@ -6,7 +6,7 @@
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:35:20 by areverte          #+#    #+#             */
-/*   Updated: 2022/09/21 17:21:31 by areverte         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:40:14 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isdigit(int c)
 	return (!(c < '0' || c > '9'));
 }
 
-/*
+/* .....
 int main(void)
 {
 	printf("%d\n", ft_isdigit('3'));

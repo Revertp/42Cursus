@@ -6,7 +6,7 @@
 #    By: areverte <areverte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 16:11:19 by areverte          #+#    #+#              #
-#    Updated: 2022/10/04 19:15:33 by areverte         ###   ########.fr        #
+#    Updated: 2022/10/06 19:55:30 by areverte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,9 +67,6 @@ HEADERS = /*.h
 $(NAME):
 	$(CC) -c $(CFLAGS) $(SRCS) -I $(HEADERS)
 	ar rcs $(NAME) $(OBJS)
-
-$(NAMEB):
-
 
 all: $(NAME)
 

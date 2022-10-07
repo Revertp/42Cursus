@@ -6,7 +6,7 @@
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 17:31:12 by areverte          #+#    #+#             */
-/*   Updated: 2022/10/04 15:19:58 by areverte         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:57:46 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char	**malloc_strings(char const *s, char c, char **words, size_t i)
 			start = i;
 			while (s[i] != c && i < ft_strlen(s))
 				i++;
-			words[j] = ft_substr(s, start, (start - i));
+			words[j] = ft_substr(s, start, (i - start));
 			if (!words[j])
 			{
 				memfree(words, j);
@@ -85,6 +85,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	return (malloc_strings(s, c, words, i));
 }
+
 /*
 int	main(void)
 {

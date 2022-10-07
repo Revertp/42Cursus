@@ -6,7 +6,7 @@
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:42:16 by areverte          #+#    #+#             */
-/*   Updated: 2022/10/05 21:33:12 by areverte         ###   ########.fr       */
+/*   Updated: 2022/10/07 20:13:31 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,49 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*cop;
+	/*
+	t_list	*newlist;
+	t_list	*temp;
 	t_list	*start;
-	cop = lst;
+
+
+	temp = lst;
 	if (!lst || !f || !del)
 		return (NULL);
-	new = ft_lstnew(f(lst->content));
-	if (!new)
-		return (NULL);
-	start = new;
-	while(lst)
+	start =0;
+	while(temp)
 	{
-		new = ft_lstnew(f(lst->content));
-		if (!new)
+		if (!(newlist = ft_lstnew(f(lst->content))))
 		{
-			del(new);
-			free(new);
-			return(NULL);
+			ft_lstclear(&start, del);
+			return (0);
 		}
-		new= lst->next;
+		ft_lstadd_back(&(start), newlist);
+		temp= temp->next;
 	}
 	return(start);
+	*/
+	t_list *new_list;
+	t_list *save;
+
+	if (!lst || !f || !del)
+		return (0);
+	new_list = ft_lstnew(f(lst->content));
+	if (!new_list)
+		return (0);
+	save = new_list;
+	lst = lst->next;
+	while (lst)
+	{
+		new_list->next = ft_lstnew(f(lst->content));
+		if (!new_list->next)
+		{
+			ft_lstclear(&save, del);
+			return (0);
+		}
+		new_list = new_list->next;
+		lst = lst->next;
+	}
+	new_list->next = NULL;
+	return (save);
 }
-//

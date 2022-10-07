@@ -6,7 +6,7 @@
 #    By: areverte <areverte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 18:10:23 by areverte          #+#    #+#              #
-#    Updated: 2022/10/06 22:04:59 by areverte         ###   ########.fr        #
+#    Updated: 2022/10/07 19:04:51 by areverte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,6 @@ SRCS = ft_atoi.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 
-
-
 SRCSB =	ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstsize_bonus.c \
@@ -59,6 +57,7 @@ SRCSB =	ft_lstnew_bonus.c \
 	ft_lstdelone_bonus.c \
 	ft_lstclear_bonus.c \
 	ft_lstiter_bonus.c \
+	ft_lstmap_bonus.c \
 
 CFLAGS = -Wall -Werror -Wextra
 OBJS =  ${SRCS:.c=.o}
@@ -68,8 +67,8 @@ HEADER = libft.h
 
 RM = rm -Rf ..swp -o .ft_ -o
 
-#%.o : %.c
-#	${CC} ${CFLAGS} -c $< -o $@
+%.o : %.c
+	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} :	${OBJS} ${HEADER}
 			ar rcs ${NAME} ${OBJS}

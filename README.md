@@ -1,18 +1,6 @@
 # **Libft**
 
-# Consideraciones técnicas
-
-• Está prohibido utilizar variables globales. <br />
-• Si necesita funciones auxiliares para escribir una función compleja, tendrá que definir esas funciones auxiliares en static, respetando la Norma. <br />
-• Suba todos los archivos a la raíz del repositorio. <br />
-• Use el comando ar para crear su librería, está prohibido usar el comando libtool.
-
-
-## Parte 1
-
-<details>
-<summary> Funciones de la libc </summary>
-
+//Readme super util sacado de lionell15
 
 
 | Nombre de la función: | memset |

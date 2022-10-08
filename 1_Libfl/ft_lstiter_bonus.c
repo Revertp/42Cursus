@@ -6,18 +6,18 @@
 /*   By: areverte <areverte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:11:10 by areverte          #+#    #+#             */
-/*   Updated: 2022/10/04 19:16:13 by areverte         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:31:14 by areverte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*temp;
 
 	temp = lst;
-	while(temp)
+	while (temp)
 	{
 		f(temp->content);
 		temp = temp->next;

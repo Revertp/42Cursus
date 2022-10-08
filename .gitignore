@@ -53,8 +53,9 @@ dkms.conf
 
 #own
 .DS_Store
-#Docu_*
+Docu_*
 #Makefile_*
 *.json
 old&doc/
 test/
+makes

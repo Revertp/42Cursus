@@ -4,7 +4,7 @@ https://github.com/lionell15/libft/blob/3148f65fb1455a798629eff1684486de485c7acf
 | Nombre de la función: | memset |
 | ------------- | ------------- |
 | Prototipo: | _void *ft_memset(void *b, int c, size_t len);_ |
-| Descripción: | Copia el caracter c (un char sin signo) a los primeros n caracteres de (b). |
+| Descripción: | Copia el caracter c (transformado de char) a los primeros n caracteres de (b). |
 
 
 | Nombre de la función: | bzero |

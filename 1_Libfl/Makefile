@@ -6,7 +6,7 @@
 #    By: areverte <areverte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 18:10:23 by areverte          #+#    #+#              #
-#    Updated: 2022/10/07 19:04:51 by areverte         ###   ########.fr        #
+#    Updated: 2022/10/09 17:27:01 by areverte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,10 +67,10 @@ HEADER = libft.h
 
 RM = rm -Rf ..swp -o .ft_ -o
 
-%.o : %.c
+%.o : %.c ${HEADER}
 	${CC} ${CFLAGS} -c $< -o $@
 
-${NAME} :	${OBJS} ${HEADER}
+${NAME} :	${OBJS} #${HEADER}
 			ar rcs ${NAME} ${OBJS}
 
 all:		${NAME}
